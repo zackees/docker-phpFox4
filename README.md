@@ -21,6 +21,9 @@ To fix this, go into the `App Spec` panel and change `http_port: 8080` to `http_
 
 When the app is deployed you must override the PORT environmental variable and set it to port 80.
 
+## Fly.io
+
+In the generated fly.toml file change `internal_port=8080` -> `internal_port=80`
 
 # Test run
 
