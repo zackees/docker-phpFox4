@@ -1,0 +1,26 @@
+<upgrade>
+	<settings>
+		<setting>
+			<group>cache</group>
+			<module_id>user</module_id>
+			<is_hidden>0</is_hidden>
+			<type>integer</type>
+			<var_name>cache_recent_logged_in</var_name>
+			<phrase_var_name>setting_cache_recent_logged_in</phrase_var_name>
+			<ordering>3</ordering>
+			<version_id>3.6.0rc1</version_id>
+			<value>0</value>
+		</setting>
+		<setting>
+			<group>cache</group>
+			<module_id>user</module_id>
+			<is_hidden>0</is_hidden>
+			<type>boolean</type>
+			<var_name>disable_store_last_user</var_name>
+			<phrase_var_name>setting_disable_store_last_user</phrase_var_name>
+			<ordering>4</ordering>
+			<version_id>3.6.0rc1</version_id>
+			<value>0</value>
+		</setting>
+	</settings>
+</upgrade>

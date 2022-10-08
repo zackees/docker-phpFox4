@@ -1,0 +1,34 @@
+<upgrade>
+    <setting_groups>
+        <name>
+            <module_id>core</module_id>
+            <version_id>4.8.6</version_id>
+            <var_name>setting_group_regex</var_name>
+            <value>regex</value>
+        </name>
+    </setting_groups>
+    <settings>
+        <setting>
+            <group>seo</group>
+            <module_id>core</module_id>
+            <is_hidden>0</is_hidden>
+            <type>integer</type>
+            <var_name>max_character_length_for_description_meta</var_name>
+            <phrase_var_name>setting_max_character_length_for_description_meta</phrase_var_name>
+            <ordering>0</ordering>
+            <version_id>4.8.6</version_id>
+            <value>0</value>
+        </setting>
+        <setting>
+            <group>seo</group>
+            <module_id>core</module_id>
+            <is_hidden>0</is_hidden>
+            <type>integer</type>
+            <var_name>max_character_length_for_title_meta</var_name>
+            <phrase_var_name>setting_max_character_length_for_title_meta</phrase_var_name>
+            <ordering>0</ordering>
+            <version_id>4.8.6</version_id>
+            <value>0</value>
+        </setting>
+    </settings>
+</upgrade>

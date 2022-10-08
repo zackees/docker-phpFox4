@@ -1,0 +1,1 @@
+<div class="ajax" data-url="{url link='core.site-stat'}"></div>

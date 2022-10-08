@@ -1,0 +1,353 @@
+.notify(@font) {
+    .fa(@font);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 18px;
+    color: lighten(@header-color, 5%);
+}
+
+.notifications {
+    border-bottom: 1px darken(@nav-bg, 8%) solid;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+#holder_notify {
+    position: absolute;
+    left: auto;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    background: transparent;
+
+    > ul {
+        > li {
+            > a, > a:hover {
+                background: transparent !important;
+            }
+
+            > a:hover {
+                background: darken(@header-bg, 1%) !important;
+            }
+        }
+
+        > li.is_active {
+
+            > a, > a:hover {
+                background: @brand-primary !important;
+            }
+        }
+    }
+}
+
+#holder_notify ul li:hover a:before {
+    color: lighten(@header-color, 40%);
+}
+
+#holder_notify ul li a.notification:before {
+    .notify('\f0f3');
+}
+
+#holder_notify ul li a.message:before {
+    .notify('\f01c');
+}
+
+#holder_notify ul li a.friend_notification:before {
+    .notify('\f234');
+}
+
+#holder_notify ul li.is_active a:before {
+    color: @brand-primary-color;
+}
+
+#holder_notify ul li div.holder_notify_drop {
+    border: 0;
+    background: @block-bg;
+    color: @block-color;
+    border-bottom: 4px darken(@block-bg, 12%) solid;
+    box-shadow: @box-shadow;
+}
+
+#holder_notify ul li div.holder_notify_drop a.holder_notify_drop_link, #holder_notify ul li div.holder_notify_drop a.holder_notify_drop_link:hover, .js_temp_friend_search_form_holder ul li a.holder_notify_drop_link, .js_temp_friend_search_form_holder ul li a.holder_notify_drop_link:hover {
+    .reset();
+    .button(darken(@block-bg, 4));
+    font-size: @font-size-base - 4 !important;
+    margin-top: 10px;
+}
+
+#request-panel-body {
+    li {
+        -webkit-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+        transition: all 300ms ease;
+        &.friend-request-accepted {
+            background-color: @alert-success-bg;
+            .info {
+                color: @alert-success-text !important;
+            }
+        }
+    }
+}
+
+.dropdown-panel .panel_actions {
+    font-size: 22px;
+    display: flex;
+    a {
+        padding: 0 20px 0 0;
+    }
+
+    > a {
+        align-items: center;
+        flex: 1;
+        display: block;
+        float: left;
+        background: @btn-gray-bg;
+        color: @btn-gray-color;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+
+        > i {
+            line-height: 40px;
+        }
+    }
+}
+
+div.notification_delete {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    font-size: @font-size-base;
+}
+
+[dir="ltr"]{
+    div.notification_delete{
+        right: 10px;
+    }
+
+}
+
+[dir="rtl"]{
+    div.notification_delete{
+        left: 10px;
+    }
+}
+
+.remove-btn-wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    font-size: @font-size-base;
+}
+
+[dir="ltr"]{
+    .remove-btn-wrapper {
+        right: 5px;
+    }
+
+}
+
+[dir="rtl"]{
+    .remove-btn-wrapper {
+        left: 5px;
+    }
+}
+
+/*========================================
+=            All Notification            =
+========================================*/
+.core-notification-listing-container{
+    .notification_holder{
+        .notification_date:not(:first-child){
+            .mt-2;
+        }
+        .notification_date{
+            font-weight:bold;
+            color: @gray-dark;
+            .mb-2;
+        }
+        .all-notification-item {
+            margin: 0 -@block-spacing;
+            .px-2;
+            .py-2;
+            display: flex;
+            align-items:center;
+            position: relative;
+            .transition(all 300ms ease);
+
+            &.is_new{
+                background: lighten(@brand-primary, 43%) ;
+                & + .all-notification-item:not(.is_new){
+                    &:after{
+                        opacity: 1;
+                    }   
+                }
+                &:after{
+                    opacity: 1;
+                }
+                &:hover{
+                    @media (min-width: @screen-md-min){
+                        background: @brand-primary-lighter;
+                        &:before,&:after{
+                            background-color: @brand-primary-lighter;
+                        }
+                        & + .all-notification-item.is_new{
+                            &:after{
+                                background-color: @brand-primary-lighter;
+                            }   
+                        }
+                        &:after{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            &:hover{
+                .notification_delete{
+                    opacity: 1 !important;
+                }
+                @media (min-width: @screen-md-min){
+                    background: @gray-lightest;
+                    &:before,&:after{
+                        background-color: @gray-lightest;
+                    }
+                    &:after{
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:before{
+                content: "";
+                height: 1px;
+                position: absolute;
+                left: @grid-point*2;
+                right: @grid-point*2;
+                bottom: 0;
+                background: @border-color;
+            }
+            &:after{
+                content: "";
+                height: 1px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top:-1px;
+                background: @border-color;
+                opacity: 0;
+            }
+            .item-outer{
+                display: flex;
+                width: 100%;
+
+                .item-avatar{
+                    margin-right: @grid-point+4;
+                    min-width: @grid-point*5;
+
+                    .no_image_user,
+                    .img-wrapper{
+                        .s-5;
+                    }
+                    .img-wrapper{
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    html[dir='rtl'] &{
+                        margin-right: 0;
+                        margin-left: @grid-point+4;
+                    }
+                }
+                .item-inner{
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    flex: 1;
+
+                    .main_link{
+                        .truncateLines(14px,19px,2,false);
+                        color: @gray-dark;
+                        background: none;
+
+                        .drop_data_user{
+                            font-weight: bold;
+                            color: @gray-darker;
+                            .fz-lh(14px);
+
+                            html[dir='rtl'] &{
+                                display: inline-block;
+                            }
+                        }
+                    }
+                    .extra_info{
+                        .fz-lh(12px);
+                        color: #999;
+                    }
+                    .main-link-bg-click{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+                .notification_delete{
+                    position: absolute;
+                    top: @grid-point;
+                    .r-1;
+                    opacity: 0;
+                    .transition(all 300ms ease);
+                    & > a{
+                        color: @gray-dark;
+                        font-size: 10px;
+                        .s-3;
+                        .items-center();
+                    }
+                    &:hover{
+                        opacity: 1;
+                    }
+
+                    @media (max-width:@screen-sm-max){
+                        display: block !important;
+                        position: static;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .table_clear_button{
+        position: absolute;
+        .r-0;
+        top: -56px;
+        li{
+            margin-top: 0;
+        }
+        input{
+            background: none;
+            color: @brand-primary;
+            padding: 0 !important;
+            border:none;
+            @media (max-width: @screen-xs-min){
+                font-size: 12px;
+            }
+            &:focus{
+                background: none !important;
+                border: 0 !important;
+                outline: none;
+            }
+        }
+        @media (max-width: 320px){
+            position: static;
+            clear: both;
+            display: flex;
+            margin-bottom: 16px;
+            justify-content: flex-end;
+        }
+    }
+}
+
+/*=====  End of All Notification  ======*/

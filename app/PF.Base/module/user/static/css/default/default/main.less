@@ -1,0 +1,272 @@
+#page_user_photo {
+    .cropit-preview {
+        background-color: #f8f8f8;
+        background-size: cover;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 250px;
+        height: 250px;
+        margin: auto;
+    }
+
+    .cropit-preview-image-container {
+        cursor: move;
+    }
+
+    .image-size-label {
+        margin-top: 10px;
+    }
+
+    input, .export {
+        display: block;
+    }
+
+    .cropit-image-zoom-input{
+        width: 50%;
+        margin: auto;
+    }
+    #js_main_photo{
+        width: 80%;
+        margin: auto;
+    }
+}
+
+.header_bar_search
+{
+    .header_bar_search_holder {
+        .user-browse-advanced-search-btn {
+            right: 48px;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            width: 32px;
+            height: auto;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a {
+                color: @text-color;
+                &.active {
+                    .ico:before {
+                        content: "\eac8";
+                    }
+                }
+            }
+        }
+    }
+    .user-browse-advanced-search-form
+    {
+        box-shadow: 0px 24px 40px 0px rgba(0, 0, 0, 0.2);
+        padding: 16px 16px 0 16px !important;
+        border: 0 !important;
+        margin-top: -11px !important;
+        margin-bottom: 16px;
+        position: absolute !important;
+        left: 0;
+        right: 0;
+        display: block;
+        z-index: 90 !important;
+        background: #ffffff !important;
+
+    }
+}
+#page_user_browse
+{
+    & .member_advance_search_form #js_user_browse_advanced
+    {
+        display: block !important;
+    }
+}
+
+//Member search
+.member-search-inline-wrapper-responsive{
+    display: flex;
+    flex-flow: wrap;
+    .item-age,.item-location,.item-zip-post{
+        flex:none;
+        width: 50%;
+        @media (max-width: @screen-xs-min){
+            width: 100%;
+        }
+    }
+
+}
+.member_advance_search_form{
+    .item-gender-search{
+        display: flex;
+        flex-flow:wrap;
+        & > label{
+            .mr-2;
+        }
+        .item-group-gender{
+            display: flex;
+            flex-flow:wrap;
+            &>.item-gender{
+                margin: 0;
+                .mr-3;
+            }
+        }
+    }
+    .member-search-inline-wrapper{
+        display: flex;
+        margin: 0 -@grid-point;
+
+        & > .form-group{
+            .px-1;
+        }
+        .item-age{
+            flex:1;
+        }
+        .item-location{
+            flex:1.7;
+        }
+        .item-zip-post{
+            flex:1.2;
+        }
+        @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+            #main:not(.empty-left) &,#main:not(.empty-right) &{
+                .member-search-inline-wrapper-responsive();
+            }
+        }
+        @media (max-width: @screen-xs-max){
+            .member-search-inline-wrapper-responsive();
+        }
+        @media (min-width: @screen-md-min){
+            #main:not(.empty-right):not(.empty-right) &{
+                .member-search-inline-wrapper-responsive();
+            }
+        }
+        @media (min-width: @screen-lg-min){
+            #main:not(.empty-right):not(.empty-right) &{
+                .item-location,.item-zip-post{
+                    width: 33.33%;
+                }
+            }
+        }
+    }
+}
+
+#page_user_register, #page_user_login {
+    #content {
+        .form-login-custom-fb {
+            .custom_fb {
+                .google-btn-container .google-btn {
+                    width: 250px;
+                }
+            }
+        }
+        .custom_login_fb, .custom_signup_fb {
+            .google-btn-container .google-btn {
+                width: 250px;
+            }
+        }
+    }
+}
+
+.google-btn-container {
+    .google-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    cursor: pointer;
+
+    .g-icon {
+        width: 18px;
+        height: 18px;
+        padding: 1px;
+        display: inline-flex;
+        .mr-1;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+/** Start Google login button **/
+.guest-login-small {
+    .google-btn-container {
+        display: inline-flex;
+        border-left: 1px solid #dcdcdc;
+        align-items: center;
+        justify-content: center;
+        .ml-1;
+        .mr-1;
+        .pl-1;
+
+        .google-btn {
+            display: inline-flex;
+            width: auto;
+        }
+
+        .g-icon {
+            .mr-0;
+            width: 32px;
+            height: 32px;
+            padding: 1px;
+        }
+    }
+}
+html[dir='rtl'] .guest-login-small .google-btn-container {
+    border-left: none;
+    border-right: 1px solid #dcdcdc;
+}
+@media (max-width: 480px) {
+    html[dir="ltr"] {
+        .guest-login-small, .login-menu-btns-xs {
+            .google-btn-container {
+                margin-left: 0 !important;
+            }
+        }
+    }
+    html[dir="rtl"] {
+        .guest-login-small, .login-menu-btns-xs {
+            .google-btn-container {
+                margin-right: 0 !important;
+            }
+        }
+    }
+}
+
+.guest_login_small, .login-menu-btns-xs {
+    &.google-login-wrapper {
+        display: inline-flex;
+    }
+    .google-btn-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        .ml-1;
+        .mr-1;
+
+        .google-btn {
+            display: inline-flex;
+            width: auto;
+        }
+
+        .g-icon {
+            .mr-0;
+            width: 40px;
+            height: 40px;
+            padding: 2px;
+        }
+    }
+}
+
+.login-menu-btns-xs{
+    &.google-login-wrapper {
+       @media (max-width: 479px){
+           display: flex;
+           .google-btn-container {
+               margin: 0;
+               min-width: @grid-point*5;
+           }
+       }
+   }
+}
+
+/** End Google login button **/

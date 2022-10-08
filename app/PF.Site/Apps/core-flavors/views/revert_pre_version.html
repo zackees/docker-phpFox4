@@ -1,0 +1,92 @@
+<form method="post" action="{{ url('/flavors/manage', {id: flavor.id, type: 'revert_pre_version', process: 'yes'}) }}" class="ajax_post">
+	<div class="alert alert-warning">
+		{{ _p('Are you sure you want to revert theme parameters to the previous state?') }}
+	</div>
+	<div class="form-group">
+		<label>{{ _p('Please choose theme parameters to revert.') }}</label>
+		{% if show_logo %}
+			<div class="custom-checkbox-wrapper">
+				<label>
+					<input type="checkbox" name="val[types][logo][]" $value="1"/>
+					<span class="custom-checkbox"></span>
+					{{ _p('Logo') }}
+				</label>
+			</div>
+		{% endif %}
+		{% if show_favicon %}
+			<div class="custom-checkbox-wrapper">
+				<label>
+					<input type="checkbox" name="val[types][favicon][]" $value="1"/>
+					<span class="custom-checkbox"></span>
+					{{ _p('Favicon') }}
+				</label>
+			</div>
+		{% endif %}
+		{% if show_content %}
+			<div class="custom-checkbox-wrapper">
+				<label>
+					<input type="checkbox" name="val[types][content][]" $value="1"/>
+					<span class="custom-checkbox"></span>
+					{{ _p('Main Content') }}
+				</label>
+			</div>
+		{% endif %}
+		{% if show_banner %}
+			<div class="custom-checkbox-wrapper">
+				<label>
+					<input type="checkbox" name="val[types][banners][]" $value="1"/>
+					<span class="custom-checkbox"></span>
+					{{ _p('Banners') }}
+				</label>
+			</div>
+		{% endif %}
+		{% if show_default_photo %}
+			<div class="custom-checkbox-wrapper">
+				<label>
+					<input type="checkbox" name="val[types][default_photo][]" $value="1"/>
+					<span class="custom-checkbox"></span>
+					{{ _p('Default Photo') }}
+				</label>
+			</div>
+		{% endif %}
+		{% if show_design %}
+			<div class="custom-checkbox-wrapper">
+				<label>
+					<input type="checkbox" name="val[types][design][]" $value="1"/>
+					<span class="custom-checkbox"></span>
+					{{ _p('Design') }}
+				</label>
+			</div>
+		{% endif %}
+		{% if show_css %}
+			<div class="custom-checkbox-wrapper">
+				<label>
+					<input type="checkbox" name="val[types][css][]" $value="1"/>
+					<span class="custom-checkbox"></span>
+					{{ _p('CSS') }}
+				</label>
+			</div>
+		{% endif %}
+		{% if show_js %}
+			<div class="custom-checkbox-wrapper">
+				<label>
+					<input type="checkbox" name="val[types][js][]" $value="1"/>
+					<span class="custom-checkbox"></span>
+					{{ _p('Javascript') }}
+				</label>
+			</div>
+		{% endif %}
+		{% if show_html %}
+			<div class="custom-checkbox-wrapper">
+				<label>
+					<input type="checkbox" name="val[types][html][]" $value="1"/>
+					<span class="custom-checkbox"></span>
+					{{ _p('HTML') }}
+				</label>
+			</div>
+		{% endif %}
+	</div>
+	<div class="form-group">
+		<input onClick="this.form.submit(); this.disabled=true;" type="submit" value="{{ _p('Yes, Revert!') }}" class="btn btn btn-danger">
+	</div>
+</form>

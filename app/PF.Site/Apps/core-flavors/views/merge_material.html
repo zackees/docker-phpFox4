@@ -1,0 +1,27 @@
+<form method="post" action="{{ url('/flavors/manage', {id: flavor.id, type: 'merge_material'}) }}" class="ajax_post">
+    <div class="alert alert-warning">
+        {{ _p('Are you sure you want to merge source code from Material Theme into this theme?') }}
+    </div>
+    <div class="alert alert-info">
+        <ul style="list-style: inside">
+            <li class="">{{ _p('Why do you need to do this? Because Material Theme will has many changes in each new version, if this theme is cloned from old version of Material it might out-date and doesn\'t compatible with new phpFox version.') }}</li>
+            <li class="">{{ _p('This action will overwrite uneditable source codes from Material into this theme, make sure it up to date with the current version of Material Theme and it will has a best compatible with the current phpFox version.') }}</li>
+            <li class="">{{ _p('This action doesn\'t affect to your changes in Logo, Homepage and Default Photo sections') }}</li>
+        </ul>
+    </div>
+    <hr>
+    <h4>{{ _p('Do you also want to overwrite editable source codes? Sometimes, editable source codes were updated in the new version of Material Theme') }}</h4>
+    <div class="form-group">
+        <div class="alert alert-warning">
+            {{ _p('This action cannot be undone, please make sure you really want to overwrite editable source codes because your changes will be removed. We suggest you to backup them first and restore later') }}
+        </div>
+        <label style="font-weight: normal"><input name="val[merge_design]" type="checkbox">&nbsp;&nbsp;{{ _p('Design - Overwrite all changes of Design section, it will be reset to default same with Material Theme') }}</label>
+        <label style="font-weight: normal"><input name="val[merge_css]" type="checkbox">&nbsp;&nbsp;{{ _p('CSS - Overwrite all changes of CSS section, it will be reset to default same with Material Theme') }}</label>
+        <label style="font-weight: normal"><input name="val[merge_js]" type="checkbox">&nbsp;&nbsp;{{ _p('Javascript - Overwrite all changes of Javascript section, it will be reset to default same with Material Theme') }}</label>
+        <label style="font-weight: normal"><input name="val[merge_html]" type="checkbox">&nbsp;&nbsp;{{ _p('HTML - Overwrite all changes of HTML section, it will be reset to default same with Material Theme') }}</label>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" onclick="flavor_start(); js_box_remove(this);">{{ _p('submit') }}</button>
+        <button type="button" onclick="js_box_remove(this);" class="btn btn-default">{{ _p('cancel') }}</button>
+    </div>
+</form>

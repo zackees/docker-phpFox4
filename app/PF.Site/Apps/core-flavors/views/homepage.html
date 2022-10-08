@@ -1,0 +1,38 @@
+<div class="fm_row">
+	<div class="fm_row_title">
+		{{ _p('Main Content') }}
+	</div>
+	<form class="ajax_post" method="post" action="{{ url('/flavors/manage', {id: flavor.id, type: 'content'}) }}">
+		<label class="help-block mt-1">{{ default_language.title }}</label>
+		<textarea name="val[content][{{ default_language.language_id }}]" class="fm_content_textarea form-control">{{ _p(content, [], default_language.language_id) }}</textarea>
+		{% if languages|length > 0 %}
+			<div class="mt-1">
+				<a href="javascript:void(0)" onclick="$('.fm_content_other_languages').toggle();">{{ _p('main_content_in_other_languages') }}</a>
+			</div>
+			<div class="fm_content_other_languages" style="display: none">
+				<hr>
+				<span class="help-block">{{ _p('if_this_value_is_empty_it_will_have_value_the_same_with_the_default_language') }}</span>
+				{% for language in languages %}
+					<label class="help-block mt-1">{{ language.title }}</label>
+					<textarea name="val[content][{{ language.language_id }}]" class="fm_content_textarea form-control">{{ _p(content, [], language.language_id) }}</textarea>
+				{% endfor %}
+			</div>
+		{% endif %}
+		<div class="fm_submit"><span>{{ _p('save') }}</span></div>
+	</form>
+</div>
+
+<div class="fm_row">
+	<div class="fm_row_title">
+		{{ _p('Banners') }}
+	</div>
+	<div class="fm_uploader">
+		<span><i class="fa fa-upload"></i></span>
+		<input multiple="multiple" type="file" class="ajax_upload" value="Upload" name="logo" accept="image/*" data-url="{{ url('/flavors/manage', {id: flavor.id}) }}&type=homepage">
+	</div>
+</div>
+<div class="fm_banners" data-flavor-id="{{ flavor.id }}">
+	{% for banner in banners %}
+	<div data-src="{{ banner }}" class="image_load"><span><i class="fa fa-remove"></i></span></div>
+	{% endfor %}
+</div>
