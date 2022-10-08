@@ -27,7 +27,7 @@ To fix this, go into the `App Spec` panel and change `http_port: 8080` to `http_
       * ID: YOUR PHPFox LICENSE ID
       * Key: YOUR PHPFox LICENCE KEY
     * Database
-      * Host: localhost
+      * Host: site url or localhost
       * Name: mysql
       * user name: admin
       * pass: See log output
