@@ -4,9 +4,12 @@ This is an dockerized version of phpFox4 representing a fresh install. This proj
 This project has been tested to work on
 
   * [x] Render.com
+    * live demo: [https://docker-phpfox4.onrender.com/index.php/](https://docker-phpfox4.onrender.com/index.php/)
   * [ ] Digital Ocean (stops progression during setup)
   * [x] railway.app
+    * live demo [https://docker-phpfox4-production.up.railway.app/](https://docker-phpfox4-production.up.railway.app/)
   * [x] fly.io
+    * live demo: [https://phpfox4.fly.dev/](https://phpfox4.fly.dev/)
   
 Please use at least 2GB of memory.
 
