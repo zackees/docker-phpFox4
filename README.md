@@ -23,7 +23,10 @@ When the app is deployed you must override the PORT environmental variable and s
 
 ## Fly.io
 
+Setup the account with 2GB of memory or more than execute
+`fly launch`
 In the generated fly.toml file change `internal_port=8080` -> `internal_port=80`
+
 
 # Test run
 
