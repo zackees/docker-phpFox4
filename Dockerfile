@@ -33,6 +33,7 @@ COPY app .
 RUN chmod 777 PF.Base
 RUN chmod 777 PF.Site
 
-EXPOSE 80 3306
+EXPOSE 3306
+EXPOSE 80
 # No CMD argument because the mattrayner/lamp image has it, which
 # will run /app/index.php
