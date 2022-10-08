@@ -1,7 +1,17 @@
 # Docker phpFox4
 
 This is an dockerized version of phpFox4 representing a fresh install. This project is very alpha.
-This project has been tested to work on Render.com. Please use at least 1GB of memory.
+This project has been tested to work on
+
+  * [ ] Render.com.
+  * [ ] Digital Ocean
+  * [ ] railway.app
+  * [ ] fly.io
+  
+Please use at least 2GB of memory.
+
+The common theme for all the docker app hosts is that they want to do a health check on port 8080,
+and this needs to be overriden so that the health check is routed to port 80.
 
 This app has been tested with a license key. It's unknown whether it will work with a trial key.
 
