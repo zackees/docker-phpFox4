@@ -3,10 +3,10 @@
 This is an dockerized version of phpFox4 representing a fresh install. This project is very alpha.
 This project has been tested to work on
 
-  * [ ] Render.com.
-  * [ ] Digital Ocean
-  * [ ] railway.app
-  * [ ] fly.io
+  * [x] Render.com
+  * [ ] Digital Ocean (stops progression during setup)
+  * [x] railway.app
+  * [x] fly.io
   
 Please use at least 2GB of memory.
 
