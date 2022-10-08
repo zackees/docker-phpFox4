@@ -8,6 +8,16 @@ This app has been tested with a license key. It's unknown whether it will work w
 Pull requests for this app are strongly encouraged!
 If you fork or like this app then please give us a star.
 
+## Render.com
+
+This should run phpFox4 out of the box.
+
+## DigitalOcean
+
+DigitalOcean will fail when it tries to issue a health check at port 8080.
+To fix this, go into the `App Spec` panel and change `http_port: 8080` to `http_port: 80`
+
+
 # Test run
 
   * `docker-compose down --rmi=all && docker-compose up`
