@@ -71,6 +71,7 @@ In the generated fly.toml file change `internal_port=8080` -> `internal_port=80`
     * password: (get password in log file, see above)
     
 # Notes:
+
 In `PF.Base/file/settings/server.sett.php` example:
 ```php
 <?php
@@ -92,3 +93,8 @@ $_CONF['db']['slave_servers'] = [
     ]
 ];
 ```
+
+
+The following is set
+  * define('PHPFOX_IS_TECHIE', true);
+  * define('PHPFOX_DEBUG', true);

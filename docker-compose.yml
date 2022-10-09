@@ -4,7 +4,7 @@ services:
   app:
     build: .
     ports:
+      - published: 3307
+        target: 3306
       - published: 80
         target: 80
-      - published: 3306
-        target: 3306
