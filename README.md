@@ -70,3 +70,25 @@ In the generated fly.toml file change `internal_port=8080` -> `internal_port=80`
     * username: admin
     * password: (get password in log file, see above)
     
+# Notes:
+In `PF.Base/file/settings/server.sett.php` example:
+```php
+<?php
+$_CONF['db']['driver'] = 'mysqli';
+$_CONF['db']['host'] = 'master_server_ip'; // host
+$_CONF['db']['user'] = 'username';
+$_CONF['db']['pass'] = 'pass';
+$_CONF['db']['name'] = 'name';
+$_CONF['db']['prefix'] = 'phpfox_';
+$_CONF['db']['port'] = '3306';
+ 
+$_CONF['db']['slave'] = true;
+$_CONF['db']['slave_servers'] = [
+    [
+     'host'=>'slave_ip',
+     'user'=>'slave_user',
+     'pass'=>'slave_pass',
+     'port'=>'slave_port'
+    ]
+];
+```
