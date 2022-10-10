@@ -6,7 +6,7 @@
         {
             "label": "Run Docker",
             "type": "shell",
-            "command": "docker-compose down --rmi=all && docker-compose up",
+            "command": "docker-compose down --rmi=all && docker volume prune -f && docker-compose up",
             "group": "build",
             "options": {
                 "cwd": "${workspaceRoot}"
